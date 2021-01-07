@@ -17,7 +17,7 @@ brewer.pal(n = 8, name = "RdBu")
 ```
 ### interactive 
 
-link [here](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf
+link [here](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf)
 ```
 library("colorspace")
 pal <- choose_palette()
