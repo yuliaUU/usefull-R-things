@@ -65,28 +65,5 @@ full_join(class_dt_meso,class_dt_macro, by=c("Phylum", 'Class')) %>% ungroup() %
   set_caption("Number of entries, n, (with percent, %) for 19 Phyla from the mesopelagic dataset groupped by organisms' class and net size (Meso and Macro)") %>% 
   theme_booktabs() %>% 
   fix_border_issues(part = "all") %>% 
-  autofit()typology <- data.frame(
-  col_keys = c( "Phylum",     "Class", "n_meso","freq_meso",
-    "n_macro", "freq_macro"),
-#  type = c("double", "double", "double",     "double", "factor"),
-  what = c("Phylum","Class","Meso","Meso","Macro","Macro"),
-  measure = c("Phylum","Class", "N", "%", "N", "%"),
-  stringsAsFactors = FALSE )
-
-
-full_join(class_dt_meso,class_dt_macro, by=c("Phylum", 'Class')) %>% ungroup() %>% 
- # dplyr::select(-Phylum) %>% 
-    mutate( across(everything(), ~replace_na(.x, "-"))) %>% 
-  flextable() %>% 
-  set_header_df(mapping = typology, key = "col_keys" ) %>% 
-  merge_h( part = "header") %>% 
-  merge_v( part = "header") %>% 
-  merge_v(j=c("Phylum")) %>% 
-  valign(j = 1, valign = "top", part = "body") %>% 
-  bold(j = 1, bold = TRUE, part = "body") %>% 
-  bold(bold = TRUE, part = "header") %>% 
-  set_caption("Number of entries, n, (with percent, %) for 19 Phyla from the mesopelagic dataset groupped by organisms' class and net size (Meso and Macro)") %>% 
-  theme_booktabs() %>% 
-  fix_border_issues(part = "all") %>% 
   autofit()
   ```
